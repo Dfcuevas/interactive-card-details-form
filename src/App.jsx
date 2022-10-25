@@ -48,7 +48,17 @@ function App() {
             <img src={cardLogo} alt="" />
           </div>
 
-          <p>{!dataForm.number ? "0000 0000 0000 0000" : dataForm.number}</p>
+          <p>
+            {!dataForm.number
+              ? "0000 0000 0000 0000"
+              : `${dataForm.number.substring(0, 4)} ${dataForm.number.substring(
+                  4,
+                  8
+                )} ${dataForm.number.substring(
+                  8,
+                  12
+                )} ${dataForm.number.substring(12, 16)}`}
+          </p>
           <div className="nameDate">
             <span>
               {!dataForm.name
